@@ -9,25 +9,32 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h3 data-testid="counter"> {count} </h3>
-        <button 
-          data-testid='minus-button'
-          onClick={()=>setCount((prev)=> prev - 1)}
-          disabled={disabled}
-        > - 
-        </button>
-
-
-        <button 
-          data-testid='plus-button'
-          onClick={()=>setCount((prev)=> prev + 1)}
-          disabled={disabled}
-        >
-           + 
-        </button>
+      <header 
+        className="App-header" 
+        style={{backgroundColor:'#fff'}}
+      >
+        <h3 data-testid="counter"
+            style={{backgroundColor:'#dbdbdb', padding:'5px 10px'}}
+        >{count} </h3>
+        
         <div>
-          <button
+          <button 
+            data-testid='minus-button'
+            onClick={()=>setCount((prev)=> prev - 1)}
+            disabled={disabled}
+          > - 
+          </button>
+          <button 
+            data-testid='plus-button'
+            onClick={()=>setCount((prev)=> prev + 1)}
+            disabled={disabled}
+          >
+            + 
+          </button>
+        </div>
+        
+        <div>
+          <button className='power-btn'
             style={{ backgroundColor:"blue" }}
             data-testid="on/off-button"
             onClick={()=> setDisabled (prev => !prev)}
